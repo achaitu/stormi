@@ -20,21 +20,6 @@ app.listen(port_number);
 
 app.get('/',function(req,res){
   res.sendFile(path.join(__dirname+'/index.html'));
-  // var city = 'delhi';
-  // console.log('city',city);
-  // var apikey = 'd0cc67f8a917083b671dbff5518891ee';
-  // var url = `http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apikey}`;
-  // request(url,function(error,responseurl,bodyurl){
-  //   var weather_json = JSON.parse(bodyurl);
-  //   var weather = {
-  //     city : city,
-  //     temperature :weather_json.main.temp,
-  //     description :weather_json.weather[0].description
-  //   }
-  //   console.log(weather);
-
-  // })
-  
 })
 
 
@@ -50,33 +35,7 @@ app.post('/',function(req,res){
   console.log('city',city);
   var w = gettemp(city); 
   let response = " ";
-  let responseObj = {"fulfillmentText":response,"fulfillmentMessages":[{"text":{"text":[w]}}]  ,"source":"" ,"expectedInputs": [
-    {
-      "inputPrompt": {
-        "richInitialPrompt": {
-          "items": [
-            {
-              "simpleResponse": {
-                "textToSpeech": w
-              }
-            }
-          ]
-        }
-      },
-      "possibleIntents": [
-        {
-          "intent": "assistant.intent.action.TEXT"
-        }
-      ]
-    }
-  ]};
-
-
-
-
-  //agent.add('url is '+url);
-
-  //agent.add('it is 'weather.main.temp);
+  let responseObj = {"fulfillmentText":response,"fulfillmentMessages":[{"text":{"text":[w]}}]  ,"source":"" };
   console.log(responseObj);
   return res.json(responseObj);
 
@@ -84,20 +43,6 @@ app.post('/',function(req,res){
 
   var result;
   var apikey = 'd0cc67f8a917083b671dbff5518891ee';
-  // var weather= {'temperature': 30};
-  // function cb(err,response,body) {
-    
-  //   var weather = JSON.parse(body);
-  //   if(weather.message==='city not found'){
-  //     result = 'unable to get weather '+ weather.message; 
-  //   }
-  //   else{
-  //     var temp_celsius = round((weather.main.temp - 273.15),1);
-  //     var maxtemp_celsius = round((weather.main.temp_max - 273.15),1);
-  //     var mintemp_celsius = round((weather.main.temp_min - 273.15),1);
-  //     result =  'Right now, it is '+ temp_celsius +'°C in with ' + weather.weather[0].description +'. The projected maximum temperature for the day is '+ maxtemp_celsius +'°C with a minimum of '+ mintemp_celsius +'°C.'; 
-  //   } 
-  // }
 
   function gettemp(city) {
     result = undefined;
