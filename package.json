@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/achaitu/stormi#readme",
   "dependencies": {
+    "deasync": "^0.1.14",
     "express": "^4.16.4",
     "request": "^2.88.0"
   }
