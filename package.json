@@ -4,7 +4,7 @@
   "description": "A weather bot",
   "main": "index.js",
   "scripts": {
-    "serve": "nodemon server.js"
+    "serve": "node index.js"
   },
   "repository": {
     "type": "git",
