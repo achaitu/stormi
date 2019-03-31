@@ -50,7 +50,30 @@ app.post('/',function(req,res){
   console.log('city',city);
   var w = gettemp(city); 
   let response = " ";
-  let responseObj = {"fulfillmentText":response,"fulfillmentMessages":[{"text":{"text":[w]}}]  ,"source":"" };
+  let responseObj = {"fulfillmentText":response,"fulfillmentMessages":[{"text":{"text":[w]}}]  ,"source":"" ,"expectUserResponse": true,"expectedInputs": [
+    {
+      "inputPrompt": {
+        "richInitialPrompt": {
+          "items": [
+            {
+              "simpleResponse": {
+                "textToSpeech": w
+              }
+            }
+          ]
+        }
+      },
+      "possibleIntents": [
+        {
+          "intent": "assistant.intent.action.TEXT"
+        }
+      ]
+    }
+  ]};
+
+
+
+
   //agent.add('url is '+url);
 
   //agent.add('it is 'weather.main.temp);
