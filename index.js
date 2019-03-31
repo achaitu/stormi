@@ -50,7 +50,7 @@ app.post('/',function(req,res){
   console.log('city',city);
   var w = gettemp(city); 
   let response = " ";
-  let responseObj = {"fulfillmentText":response,"fulfillmentMessages":[{"text":{"text":[w]}}]  ,"source":"" ,"expectUserResponse": true,"expectedInputs": [
+  let responseObj = {"fulfillmentText":response,"fulfillmentMessages":[{"text":{"text":[w]}}]  ,"source":"" ,"expectedInputs": [
     {
       "inputPrompt": {
         "richInitialPrompt": {
