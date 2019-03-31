@@ -1,0 +1,23 @@
+{
+  "name": "stormi",
+  "version": "1.0.0",
+  "description": "A weather bot",
+  "main": "index.js",
+  "scripts": {
+    "serve": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/achaitu/stormi.git"
+  },
+  "author": "Chaitanya",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/achaitu/stormi/issues"
+  },
+  "homepage": "https://github.com/achaitu/stormi#readme",
+  "dependencies": {
+    "express": "^4.16.4",
+    "request": "^2.88.0"
+  }
+}
