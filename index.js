@@ -45,8 +45,8 @@ app.post('/',function(req,res){
   if(!req.body) return res.sendStatus(400);
   console.log('Here is the post request');
   console.log(req.body);
-  console.log('Got geo parameters from dialog' + req.body['city_name']);
-  var city = req.body['city_name'];
+  console.log('Got geo parameters from dialog' + req.body.queryResult.parameters['geo-city']);
+  var city = req.body.queryResult.parameters['geo-city'];
   console.log('city',city);
   var w = gettemp(city); 
   let response = " ";
