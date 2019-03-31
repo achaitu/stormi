@@ -6,9 +6,10 @@ var path = require('path');
 var bodyParser = require('body-parser');
 var app = express();
 app.use(bodyParser.json());
+var server = require('http').createServer(app);
 
-app.listen(8010);
-
+var port_number = server.listen(process.env.PORT || 3000);
+app.listen(port_number);
 
 app.get('/',function(req,res){
   res.sendFile(path.join(__dirname+'/index.html'));
