@@ -25,7 +25,7 @@ app.get('/',function(req,res){
 
 console.log('Server started');
 
-app.post('/',function(req,res){
+app.post('/webhook',function(req,res){
   console.log('Received a post request');
   if(!req.body) return res.sendStatus(400);
   console.log('Here is the post request');
@@ -64,9 +64,10 @@ app.post('/',function(req,res){
     
     })
 
-    while(result===undefined){
-      require('deasync').runLoopOnce();
-    }
+    // while(result===undefined){
+    //   require('deasync').runLoopOnce();
+    // }
+
     return result;
   }
 
