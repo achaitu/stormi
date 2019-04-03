@@ -64,9 +64,9 @@ app.post('/webhook',function(req,res){
     
     })
 
-    // while(result===undefined){
-    //   require('deasync').runLoopOnce();
-    // }
+    while(result===undefined){
+      require('deasync').runLoopOnce();
+    }
 
     return result;
   }
