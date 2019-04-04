@@ -35,7 +35,7 @@ app.post('/webhook',function(req,res){
   console.log('city',city);
   var w = gettemp(city); 
   let response = " ";
-  let responseObj = {"fulfillmentText":response,"fulfillmentMessages":[{"text":{"text":[w]}}]  ,"source":"" };
+  let responseObj = {"fulfillmentText":w,"fulfillmentMessages":[{"text":{"text":[w]}}]  ,"source":"" };
   console.log(responseObj);
   return res.json(responseObj);
 
